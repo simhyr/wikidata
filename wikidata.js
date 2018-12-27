@@ -10,7 +10,7 @@ module.exports = class WikidataAPI {
     }
 
     getAsync(search, callback) {
-        let completePath = this._basePath + `&search=${search}`;
+        let completePath = this._basePath + `&search=${encodeURI(search)}`;
 
         var httpOptions = {
             hostname: this._hostName,
